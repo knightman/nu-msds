@@ -1,0 +1,73 @@
+---
+title: "Knight_Andrew - Extra Credit Problem #1 (5 points)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This problem illustrates quartile calculations using random samples of different sizes from the standard normal distribution.
+
+Use *set.seed(1237)* and *rnorm(n, mean = 0, sd = 1)* with *n* = 10, *n* = 30, *n* = 100 and *n* = 300 to draw four different random samples from the standard normal distribution. Reset *set.seed(1237)* prior to drawing each of the four samples.
+
+For each sample, calculate the first, second and third quartile using *quantile()*. Use "type = 2" (method used in Business Statistics) and "type = 7" (R default) and generate quartiles for each.
+
+Display the results. The quartiles for the standard normal distribution are -0.6745, 0.0 and +0.6745 as shown using *qnorm(c(0.25, 0.5, 0.75), mean = 0, sd = 1, lower.tail = TRUE)*.  Note below.
+
+```{r standardNormalQuartiles}
+qnorm(c(0.25, 0.5, 0.75), mean = 0, sd = 1, lower.tail = TRUE)
+q2 <- quantile(c(10, 30, 100, 300), probs = c(0.25, 0.5, 0.75), na.rm = FALSE, names = TRUE, type = 2)
+q2
+q7 <- quantile(c(10, 30, 100, 300), probs = c(0.25, 0.5, 0.75), na.rm = FALSE, names = TRUE, type = 7)
+q7
+```
+
+Take note of the results for the first and third quartile. Compare the computed results between the two methods (type = 2 and type = 7). Comment on the rate of convergence for these estimates as the sample size is increased. What does this exercise indicate about describing a population distribution with samples?
+
+As defined by the function Q[i](p) = (1 - γ) x[j] + γ x[j+1], sample quantile types are weighted averages of consecutive order. The discontinuous sample type 2 seems to converge more quickly than the continous sample type 7.
+
+```{r ecp1}
+# Add your set.seed(), rnorm() and quantile() code to this code 'chunk':
+#help(append)
+first <- c()
+third <- c()
+quartarray <- c()
+
+for (x in c(10,30,100,300)){
+  set.seed(1237)
+  n <- rnorm(x, mean = 0, sd = 1)
+  q2result <- quantile(n, probs = seq(0, 1, 0.25), na.rm = FALSE, names = TRUE, type = 2)
+  tmp2_1 <- q2result[["25%"]]
+  tmp2_3 <- q2result[["75%"]]
+  quartarray <- append(quartarray, q2result, after = length(quartarray))
+  q7result <- quantile(n, probs = seq(0, 1, 0.25), na.rm = FALSE, names = TRUE, type = 7)
+  tmp7_1 <- q7result[["25%"]]
+  tmp7_3 <- q7result[["75%"]]
+  quartarray <- append(quartarray, q7result, after = length(quartarray))
+  first <- append(first, abs(tmp2_1 - tmp7_1), after = length(first))
+  third <- append(third, abs(tmp2_3 - tmp7_3), after = length(third))
+}
+print(quartarray)
+
+#show differences in 75% quartiles for each sample size
+third
+
+#show rate of convergence based on sample size
+plot(c(10,30,100,300), first,
+ main="Overlaying Graphs",
+ xlab = "N Sample Size",
+ ylab="Difference between Type 2 and Type 7",
+ type="l",
+ col="blue")
+
+lines(c(10,30,100,300), third, col="red")
+
+legend("topright",
+      c("first","third"),
+      fill=c("blue","red")
+)
+
+```
+
+This shows that difference between discontinuous (type 2) and continuous (type 7) distribution decreases as the sample size increases.
