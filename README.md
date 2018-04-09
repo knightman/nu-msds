@@ -14,8 +14,6 @@ Information about the program can be found [here](https://sps.northwestern.edu/m
 
 These are links to sub-folders within. Content will be updated periodically.
 
-* [MSDS 410]()
-* [MSDS 460]()
 
 ## Disclaimer
 
