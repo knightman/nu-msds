@@ -1,6 +1,6 @@
 # 460
 
-MSDS 460: Decision Analytics
+Decision Analytics
 
 ## Summary
 

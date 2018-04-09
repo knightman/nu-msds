@@ -1,6 +1,6 @@
 # 410
 
-MSDS 410: Regression Analysis
+Regression Analysis
 
 ## Summary
 

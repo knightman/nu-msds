@@ -12,12 +12,21 @@ Information about the program can be found [here](https://sps.northwestern.edu/m
 
 ## Structure
 
-These are links to sub-folders within. Content will be updated periodically.
+These are links to course specific sub-folders. Content will be updated periodically.
+
+Current Courses:
 
 * [MSDS 410](https://github.com/knightman/nu-msds/tree/master/410)
 * [MSDS 460](https://github.com/knightman/nu-msds/tree/master/460)
+
+Previous Courses:
+
+* [PRED 400](https://github.com/knightman/predict-400)
 * [PRED 401](https://github.com/knightman/nu-msds/tree/master/401)
+* [PRED 402](https://github.com/knightman/nu-msds/tree/master/402)
 * [PRED 420](https://github.com/knightman/nu-msds/tree/master/420)
+
+Note: The program name changed in 2018 so some previous courses have different identifiers.
 
 ## Disclaimer
 

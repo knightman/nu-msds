@@ -1,10 +1,10 @@
 # 420
 
-MSDS 420: Database Systems and Data Preparation
+Database Systems and Data Preparation
 
 ## Summary
 
-This contains a selection of public-facing resources, content and code for the MSDS 420 course.
+This contains a selection of public-facing resources, content and code for the PREDICT 420 course.
 
 Information about the program can be found [here](https://sps.northwestern.edu/masters/data-science/program-courses.php?course_id=4769).
 

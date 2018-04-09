@@ -1,10 +1,10 @@
 # 401
 
-MSDS 401: Statistical Analysis
+Statistical Analysis
 
 ## Summary
 
-This contains selection of public-facing resources, content and code for the MSDS 401 course.
+This contains selection of public-facing resources, content and code for the PREDICT 401 course.
 
 Information about the program can be found [here](https://sps.northwestern.edu/masters/data-science/program-courses.php?course_id=4764).
 
