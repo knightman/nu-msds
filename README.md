@@ -17,7 +17,6 @@ These are links to course specific sub-folders. Content will be updated periodic
 Current Courses:
 
 * [MSDS 410](https://github.com/knightman/nu-msds/tree/master/410)
-* [MSDS 460](https://github.com/knightman/nu-msds/tree/master/460)
 
 Previous Courses:
 
